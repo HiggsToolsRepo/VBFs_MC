@@ -1,5 +1,9 @@
 INTRODUCTION 
 -------------
+Here some resources to learn git:
+
+Very comprehensive, see in particular the "Getting started" and "Git basics"
+https://git-scm.com/documentation
 
 In git every repository is a full copy. Then there is the github copy,
 which is the one we share.
