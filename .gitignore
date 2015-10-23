@@ -24,4 +24,4 @@ AutoDict_*
 *.txt
 *.log
 *.png
-*.ipynb_checkpoints/
+*.ipynb_checkpoints
