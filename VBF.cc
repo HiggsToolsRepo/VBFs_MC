@@ -23,17 +23,17 @@ namespace Rivet {
     void init() {
 
       FinalState fs;
-      Cut cuts = (Cuts::etaIn(-5.0,5.0) 
+      Cut cuts = (Cuts::etaIn(-2.0,2.0) 
 		  && (Cuts::pT > 25.0*GeV));
 
       // wp electron
       WFinder wp1finder(fs, cuts, PID::POSITRON, 
 			70.0*GeV, 100.0*GeV, 25.0*GeV,
-			0.2);
+			0.1);
       // wp muon
       WFinder wp2finder(fs, cuts, PID::ANTIMUON, 
 			70.0*GeV, 100.0*GeV, 25.0*GeV,
-			0.2);
+			0.1);
       
       addProjection(wp1finder, "WFpnu");
       addProjection(wp2finder, "WFmnu");
@@ -49,13 +49,12 @@ namespace Rivet {
       jetfs.addVetoPairId(15);
       jetfs.addVetoPairId(16);
 
-//      addProjection(jet_FS, "HadFSsss");
-     // addProjection(jetfs, "HadFS");
-
       // Find jets!
       FastJets jet_FJ_RCUT04(jetfs, FastJets::ANTIKT, 0.5);
       addProjection(jet_FJ_RCUT04, "Jets_FS_RCUT04");
-      _h_pT = bookHisto1D("WpT", 50, 0., 2000.);
+      _histos["WW_pT"]           = bookHisto1D("WW_pT", 50, 0., 2000.);
+      _histos["Delta_eta_jets"]  = bookHisto1D("Delta_eta_jets",50,0.,5.);
+      _histos["m_jj"]            = bookHisto1D("m_jj",100,20.,2000.);
     }
 
 
@@ -72,17 +71,18 @@ namespace Rivet {
 
       const FourMomentum Wpsmom = (Wppnu.bosons()[0].momentum() + 
 				   Wpmnu.bosons()[0].momentum());
-      _h_pT->fill(Wpsmom.pT()/GeV,weight);
+      _histos["WW_pT"]->fill(Wpsmom.pT()/GeV,weight);
+      const FourMomentum jmom1   = jets[1].momentum();
+      const FourMomentum jmom2   = jets[1].momentum();      
+
+      _histos["Delta_eta_jets"]->fill(std::abs(jmom1.eta()-jmom2.eta()),
+				      weight);
+      _histos["m_jj"]->fill((jmom1+jmom2).mass()/GeV,weight);
     }
 
-
+    
     /// Normalise histograms etc., after the run
     void finalize() {
-
-      /// @todo Normalise, scale and otherwise manipulate histograms here
-
-      // scale(_h_YYYY, crossSection()/sumOfWeights()); // norm to cross section
-      // normalize(_h_YYYY); // normalize to unity
 
     }
 
@@ -92,18 +92,10 @@ namespace Rivet {
   private:
 
     // Data members like post-cuts event weight counters go here
-
-
-    /// @name Histograms
-    //@{
-    Profile1DPtr _h_XXXX;
-    Histo1DPtr _h_pT;
+    // {@
+    std::map<string,Histo1DPtr> _histos;
     //@}
-
-
   };
-
-
 
   // The hook for the plugin system
   DECLARE_RIVET_PLUGIN(VBF);
