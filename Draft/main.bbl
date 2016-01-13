@@ -1,0 +1,6 @@
+\ifx\mcitethebibliography\mciteundefinedmacro
+\PackageError{amsunsrt_mod.bst}{mciteplus.sty has not been loaded}
+{This bibstyle requires the use of the mciteplus package.}\fi
+\begin{mcitethebibliography}{}
+
+\end{mcitethebibliography}

@@ -1,0 +1,2 @@
+DEPFILES = main.tex bib/journal.bib text/global.tex text/introduction.tex text/sec_1.tex text/sec_2.tex text/sec_3.tex text/conclusions.tex text/macros_maths.tex text/macros_physics.tex text/macros_refs.tex text/macros_collabs.tex text/macros_codes.tex
+FIGUREDEPFILES = 

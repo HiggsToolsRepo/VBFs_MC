@@ -1,0 +1,127 @@
+%= math ===========================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{longtable}
+\usepackage{multirow}
+%= graphics =======================================
+\usepackage{relsize}
+\usepackage{pstricks}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{units}
+%\usepackage{graphpap}
+%= citations ======================================
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\numberwithin{equation}{section}
+\usepackage{mciteplus}
+%= layout =========================================
+\usepackage[a4paper,pdfborder={0 0 0}]{hyperref}
+\usepackage[format=hang,labelfont=bf,hypcap=true]{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+\subsubsectionfont{\mdseries\itshape\large}
+\setlength{\parindent}{0mm}
+\setlength{\hoffset}{-1.75cm}
+\setlength{\textwidth}{16.5truecm}
+\setlength{\textheight}{24cm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\parskip}{1mm}
+\setlength{\mathindent}{2ex}
+\makeatletter
+\DeclareRobustCommand*{\bfseries}{%
+  \not@math@alphabet\bfseries\mathbf
+  \fontseries\bfdefault\selectfont
+  \boldmath
+}
+\makeatother
+\let\spreprint\empty
+\newcommand{\preprint}[1]{\def\spreprint{\protect#1}}
+\let\sinstitute\empty
+\newcommand{\institute}[1]{\def\sinstitute{\protect#1}}
+\makeatletter
+\renewcommand{\maketitle}{\begingroup
+  \null\thispagestyle{empty}%
+    \ifx\spreprint\empty
+      \vskip 5ex
+    \else
+      \flushright\large\spreprint\vskip 2ex
+    \fi
+    \vskip 5ex
+    \flushleft
+      {\sffamily\bfseries\huge\@title}\vskip 6ex
+      \@author\vskip 2ex
+      \ifx\sinstitute\empty
+      \else
+        {\small\sinstitute}
+      \fi
+    \vskip 5ex
+  \endgroup
+}
+\makeatother
+\renewenvironment{abstract}{\begin{center}
+  {\large\sffamily\bfseries Abstract: }
+  \begin{minipage}[t]{0.75\textwidth}
+}{\end{minipage}\end{center}\vskip 10ex}
+\newenvironment{stress}{\vskip 2ex
+  \hspace*{2ex}\begin{minipage}{\textwidth-4ex}
+  \em}{\end{minipage}\vskip 2ex}
+\newcommand{\myfigure}[3]{
+  \begin{figure}[#1]
+    \begin{center}
+      #2\\
+      \parbox[t]{\widthof{#2}}{\caption{#3}}
+    \end{center}
+  \end{figure}
+}
+\newcommand{\mytable}[3]{
+  \begin{table}[#1]
+    \begin{center}
+      #2\\
+      \parbox[t]{\widthof{#2}}{\caption{#3}}
+    \end{center}
+  \end{table}
+}
+%= equation numeration scheme =====================
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\numberwithin{equation}{section}
+%= abbreviations ==================================
+\DeclareRobustCommand{\plusplus}{\raisebox{0.2ex}{\smaller++}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Maths macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{text/macros_maths}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Physics macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{text/macros_physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section references
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{text/macros_refs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Experiments / Machines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{text/macros_collabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Software names
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{text/macros_codes}
+
+
+
+\newcommand{\todo}[1]{\textbf{\color{red}#1}}
+%\newcommand{\todo}[1]{\fbox{\begin{minipage}{\textwidth}\textbf{#1}\end{minipage}}}
+\newcommand{\didit}[1]{\textbf{\underline{#1}}}
+\newcommand{\checked}[1]{\hfill{\textbf{\underline{#1}}}}
+
+

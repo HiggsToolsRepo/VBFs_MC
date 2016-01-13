@@ -1,0 +1,63 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{axodraw}
+\usepackage{wrapfig}
+\usepackage{xspace}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{threeparttable}
+\usepackage{relsize}
+\usepackage{ifthen}
+\usepackage{lineno}
+\usepackage{enumerate}
+\usepackage{makeidx}
+\usepackage{showidx}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+
+%%% Structuring
+\newcommand{\Vp}{\ensuremath{\vphantom{\frac{|^|}{|^|}}}}
+\newcommand{\LINE}{\underline{\hspace*{13.5cm}\hphantom{t}}\\}
+\newcommand{\comment}[2][]{\noindent\LINE{\bf{#1}: }{#2}\\\LINE}
+%\newcommand{\todo}[1]{\textbf{\color{red}#1}}
+%\newcommand{\didit}[1]{\textbf{\color{blue}did it (#1)}}
+%\newcommand{\checked}[1]{\hfill{\textbf{\color{green}\checkmark(#1)}}}
+\newcommand{\todo}[1]{\fbox{\begin{minipage}{\textwidth}\textbf{#1}\end{minipage}}}
+\newcommand{\didit}[1]{\textbf{\underline{#1}}}
+\newcommand{\checked}[1]{\hfill{\textbf{\underline{#1}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Maths macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros_maths}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Physics macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros_physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section references
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros_refs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Experiments / Machines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros_collabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Software names
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros_codes}
+
+
+\DeclareRobustCommand{\plusplus}{\raisebox{0.2ex}{\smaller++}}
+
+\input{macros_joey}
+
+
