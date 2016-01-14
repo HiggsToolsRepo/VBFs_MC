@@ -21,7 +21,6 @@ crabConfig_*
 AutoDict_*
 
 # Other temp files
-*.txt
 *.log
 *.png
 *.ipynb_checkpoints
