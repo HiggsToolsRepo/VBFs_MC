@@ -1,4 +1,4 @@
-# Event number   W pT    | Delta eta j1,j2 |     Delta R j1,j2   m j1, j2        N of jets       j1 pT   j2 pT   Centrality      | Delta Phi l1, l2 |    m l1, l2        Empty   | Delta eta l1,l2 |     mET (scalar)    mET phi         dijet min distance      Zeppenfeld Var          Cos |tot phi|   Cos | deltaphi(j1+j2,l1+l2) |   Empty   Weight
+# Event number 	 W pT  	 | Delta eta j1,j2 | 	 Delta R j1,j2 	 m j1, j2 	 N of jets	 j1 pT 	 j2 pT 	 Centrality 	 | Delta Phi l1, l2 | 	 m l1, l2 	 Empty 	 | Delta eta l1,l2 | 	 mET (scalar) 	 mET phi 	 dijet min distance 	 Zeppenfeld Var 	 Cos |tot phi| 	 Cos | deltaphi(j1+j2,l1+l2) | 	 Empty 	 Weight
 17715997852917796541	201.209	1.61588	2.09551	263.077	2	122.107	118.654	-0.0534003	5.45764	112.789	0	0.706277	523.296	4.21002	2.06557	0.498082	-0.814545	-0.991224	0	0.35237
 11247641552494056827	245.117	2.03117	2.61589	243.281	2	106.129	69.0148	0.488369	0.809971	32.1046	0	0.314819	376.695	1.22666	1.86452	0.331229	-0.331335	-0.921824	0	0.170997
 14876342680230863194	97.8831	1.44423	3.15031	175.507	2	72.9593	66.0836	-2.11802	0.579501	45.0296	0	1.32877	242.254	6.08128	0.869115	2.16367	-0.992851	-0.214586	0	0.0661603
